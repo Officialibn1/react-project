@@ -1,8 +1,5 @@
-import Announcement from "./Components/Announcement";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from "./Components/Nav";
-import Totals from "./Components/Totals";
-import { Container } from "./Components/Styles/Container";
-import Header from "./Components/Header";
 
 const TotalsData = [
   {title: 'Total State', points: '36', id: 1},
@@ -14,13 +11,10 @@ const TotalsData = [
 
 function App() {
   return (
-    <Container>
-      <Announcement />
-      <Nav />
-      <Header />
-      <Totals datas={TotalsData} />
-    </Container>
-  );
+      <>
+        <Nav/>
+      </>
+    );
 }
 
 
