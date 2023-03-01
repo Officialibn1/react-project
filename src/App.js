@@ -1,5 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+import { Route, Routes } from 'react-router-dom';
 import Nav from "./Components/Nav";
+import Cancel from './Components/pages/Cancel';
+import Home from './Components/pages/Home';
+import NotFound from './Components/pages/NotFound';
+import Success from './Components/pages/Success';
 
 const TotalsData = [
   {title: 'Total State', points: '36', id: 1},
@@ -11,9 +17,15 @@ const TotalsData = [
 
 function App() {
   return (
-      <>
+      <Container>
         <Nav/>
-      </>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='success' element={<Success />} />
+          <Route path='cancel' element={<Cancel />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Container>
     );
 }
 
