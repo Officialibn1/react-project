@@ -2,9 +2,9 @@ import React from 'react';
 
 const Cancel = () => {
     return (
-        <div>
-            
-        </div>
+        <h1>
+           Sorry to see you cancelled your stripe payment! 
+        </h1>
     );
 }
 
