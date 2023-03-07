@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { productsArray, getProductData } from "./ProductStore";
+import { getProductData } from "./ProductStore";
 
 export const CartContext = createContext({
     item: [],
@@ -41,9 +41,12 @@ const CartProvider = ({children}) => {
                 ]
             )
         }else{
-            cartProducts.map((product) => product.id === id ?
-            {...product, quantity: product.quantity + 1} :
-            quantity)
+           setCartProducts(
+                cartProducts.map((product) => product.id === id ?
+                {...product, quantity: product.quantity + 1} :
+                product
+                )
+           )
         }
     }
 
@@ -74,6 +77,7 @@ const CartProvider = ({children}) => {
     // Function to get the total cost of items in the cart
     function getTotalCost() {
         let totalCost = 0;
+        // eslint-disable-next-line array-callback-return
         cartProducts.map(cartItem => {
             const productData = getProductData(cartItem.id);
             totalCost += (productData.price * cartItem.quantity)
