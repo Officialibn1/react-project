@@ -1,11 +1,18 @@
+// Coffee: price_1Mj6DDBF5mBg7x1O67Hxrq6G
+// Lipton: price_1Mj6E7BF5mBg7x1OEYhVIUGs
+// Cocoa: price_1Mj6EoBF5mBg7x1Oy1sEJqmZ
+// Honey: price_1Mj6FNBF5mBg7x1OC3ZAdY65
+// Sugar: price_1Mj6FrBF5mBg7x1O97vHsyZ9
+// Predator: price_1Mj6GPBF5mBg7x1OzyUzNgAL
+
 
 const productsArray = [
-    {id: 1, title: 'Coffee', price: 4.99},
-    {id: 2, title: 'Lipton', price: 5.99},
-    {id: 3, title: 'Cocoa', price: 4.89},
-    {id: 4, title: 'Honey', price: 6.79},
-    {id: 5, title: 'Sugar', price: 5.99},
-    {id: 6, title: 'Predator', price: 7.59},
+    {id: 'price_1Mj6DDBF5mBg7x1O67Hxrq6G', title: 'Coffee', price: 4.99},
+    {id: 'price_1Mj6E7BF5mBg7x1OEYhVIUGs', title: 'Lipton', price: 5.99},
+    {id: 'price_1Mj6EoBF5mBg7x1Oy1sEJqmZ', title: 'Cocoa', price: 4.89},
+    {id: 'price_1Mj6FNBF5mBg7x1OC3ZAdY65', title: 'Honey', price: 6.79},
+    {id: 'price_1Mj6FrBF5mBg7x1O97vHsyZ9', title: 'Sugar', price: 5.99},
+    {id: 'price_1Mj6GPBF5mBg7x1OzyUzNgAL', title: 'Predator', price: 7.59},
 ]
 
 function getProductData(id) {
