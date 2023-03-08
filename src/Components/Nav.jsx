@@ -13,6 +13,23 @@ const Nav = () => {
     
     const handleClose = () => setShow(false);
 
+    // Checkout Function
+    const checkout = async () => {
+        await fetch('http://localhost:4000/checkout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({items: cart.item})
+        }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            if (response.url) {
+                window.location.assign(response.url);
+            }
+        })
+    }
+
     return (
         <>
             <Navbar expand='sm'>
@@ -38,7 +55,7 @@ const Nav = () => {
                                 </p>
                                 <hr className='mt-5'/>
                                 <h3>Total Cost: ${cart.getTotalCost().toFixed(2)}</h3>
-                                <Button variant='success'>Checkout</Button>
+                                <Button variant='success' onClick={checkout}>Checkout</Button>
                             </Container>
                             :
                             <p className='lean'>
